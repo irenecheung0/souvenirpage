@@ -26,6 +26,7 @@
 		<!-- One -->
 		<section
 			class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+			<div id="hi"></div>
 			<div class="content">
 				<h1>Creating New NFTs</h1>
 				<p class="major">Running cryptographic algorithms...</p>
@@ -52,11 +53,19 @@
 							var input = $("input").val().trim();
 							console.log(input);
 							if (input) {
-								window.location = "./images/" + input + '.jpg';
+								var img = document.createElement("img");
+								img.src = "./images/" + input + ".jpg";;
+								var src = document.getElementById("hi");
+								src.innerHTML = '';
+								src.appendChild(img);
+								// window.location = "./images/" + input + '.jpg';
 							}
 							else {
 								//if url not found, redirect to default url
-								window.location = "./eye.html";
+								var img = "<a>Can't find your image</a>";
+								var src = document.getElementById("hi");
+								src.innerHTML = '';
+								src.appendChild(img);
 							}
 						});
 					</script>
@@ -66,6 +75,7 @@
 								<a href="./eye.html" target="_parent"><button class="submitbutton">Submit</button></a> -->
 			</div>
 		</section>
+			
 
 		<section
 			class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
